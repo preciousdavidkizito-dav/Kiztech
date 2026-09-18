@@ -1066,7 +1066,11 @@
       <p>Tell me a bit about your project and I'll get back to you within a day or two.</p>
     </div>
     <div class="contact-wrap">
-      <form id="contactForm">
+      <form id="contactForm" action="https://formsubmit.co/kiztech247@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New project inquiry — kiztech.web">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://kiztech.vercel.app/#contact">
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
@@ -1211,17 +1215,6 @@
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    const subject = encodeURIComponent('New project inquiry from ' + name);
-    const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
-    window.location.href = 'mailto:kiztech247@gmail.com?subject=' + subject + '&body=' + body;
-  });
 
   const backToTop = document.getElementById('backToTop');
   window.addEventListener('scroll', function(){
